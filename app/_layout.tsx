@@ -12,7 +12,7 @@ import "react-native-reanimated";
 
 import { useColorScheme } from "@/components/useColorScheme";
 
-import { auth } from "../firebaseConfig";
+import { auth } from "../firebaseConfig.js";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
@@ -78,7 +78,7 @@ function RootLayoutNav() {
 
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack>
+      <Stack screenOptions={{ headerShown: false }}>
         {!siUser ? (
           <>
             <Stack.Screen name="index" options={{ headerShown: false }} />
